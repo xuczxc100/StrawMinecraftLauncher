@@ -1,0 +1,45 @@
+appId: xyz.wastebase.smcl
+productName: StrawMinecraftLauncher
+copyright: Copyright (c) 2026 StrawCoding
+directories:
+  buildResources: build
+  output: release/${version}
+files:
+  - out/**
+  - package.json
+  - LICENSE
+  - '!**/*.map'
+asarUnpack:
+  - resources/**
+extraResources:
+  - from: build/icon.png
+    to: icon.png
+artifactName: SMCL-${version}-${os}-${arch}.${ext}
+win:
+  icon: build/icon.png
+  target:
+    - target: nsis
+      arch: [x64]
+nsis:
+  oneClick: false
+  allowToChangeInstallationDirectory: true
+  shortcutName: StrawMinecraftLauncher
+  uninstallDisplayName: StrawMinecraftLauncher
+mac:
+  icon: build/icon.png
+  category: public.app-category.games
+  target:
+    - target: dmg
+      arch: [x64, arm64]
+  identity: null
+linux:
+  icon: build/icon.png
+  category: Game
+  executableName: smcl
+  syncDesktopName: true
+  synopsis: Cross-platform Minecraft launcher
+  target:
+    - AppImage
+    - deb
+  maintainer: StrawCoding <strawcoding@wastebase.xyz>
+publish: null
