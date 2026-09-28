@@ -78,6 +78,16 @@ test('full user flow: instances, accounts, Modrinth, launch, export and import',
     await page.getByTestId('resource-target').selectOption({ label: 'E2E Fabric（1.20.1 Fabric）' })
     await page.getByTestId('resource-query').fill('fabric api')
     await expect(page.getByTestId('install-fabric-api')).toBeVisible({ timeout: 60_000 })
+    await expect(page.getByTestId('resource-results')).not.toHaveClass(/\bdim\b/)
+    await expect
+      .poll(
+        () =>
+          page.$$eval('[data-testid="resource-results"] .icon-tile img', (imgs) =>
+            imgs.slice(0, 3).every((img) => (img as HTMLImageElement).complete && (img as HTMLImageElement).naturalWidth > 0),
+          ),
+        { timeout: 30_000 },
+      )
+      .toBe(true)
     await expectNoOverflow(page, 'resources')
     await shot(page, 'resources-modrinth')
     await page.getByTestId('install-fabric-api').click()
