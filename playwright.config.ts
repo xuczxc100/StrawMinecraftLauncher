@@ -8,5 +8,6 @@ export default defineConfig({
   workers: 1,
   retries: 0,
   reporter: [['list'], ['html', { open: 'never', outputFolder: 'playwright-report' }]],
-  outputDir: 'test-results',
+  // Playwright empties outputDir on every run; screenshots and launch logs live beside it in test-results/.
+  outputDir: 'test-results/playwright',
 })

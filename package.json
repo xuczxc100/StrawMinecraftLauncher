@@ -1,7 +1,7 @@
 {
   "name": "straw-minecraft-launcher",
   "productName": "StrawMinecraftLauncher",
-  "version": "0.1.0-preview.1",
+  "version": "0.1.0-preview.2",
   "description": "StrawMinecraftLauncher (SMCL) - a cross-platform Minecraft Java Edition launcher built on XMCL core",
   "desktopName": "smcl.desktop",
   "author": "StrawCoding",

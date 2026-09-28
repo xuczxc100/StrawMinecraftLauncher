@@ -19,6 +19,10 @@ SMCL 從零打造的第一個版本，核心功能使用 XMCL 的 `@xmcl/*` 函�
 - GitHub Actions 升級到支援 Node 24 的版本（checkout／setup-node v7、upload-artifact v7、download-artifact v8、action-gh-release v3）。
 - `scripts/sync-version.mjs` 同步版本到 `package-lock.json`，避免 lockfile 根版本與 `package.json` 不一致。
 
+## 測試工具（0.1.0.2）
+
+- Playwright 的 `outputDir` 改為 `test-results/playwright`：Playwright 每次執行都會清空 outputDir，先前會連帶刪掉 `test-results/screenshots` 與啟動日誌。
+
 ## 平台
 
 Windows（NSIS）、Linux（AppImage、deb）、macOS（dmg，x64 與 arm64，未簽章）。
