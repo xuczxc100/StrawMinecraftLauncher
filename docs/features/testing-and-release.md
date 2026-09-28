@@ -34,7 +34,7 @@ push／PR 到 `main`：`npm ci` → check-version-bump → lint → typecheck �
 
 ## 版本
 
-- `VERSION` 格式 `a.b.c.d`，`d` 為預覽號，`0` 為正式版；`scripts/sync-version.mjs` 轉成 semver（`a.b.c` 或 `a.b.c-preview.d`）寫入 `package.json`。
+- `VERSION` 格式 `a.b.c.d`，`d` 為預覽號，`0` 為正式版；`scripts/sync-version.mjs` 轉成 semver（`a.b.c` 或 `a.b.c-preview.d`）寫入 `package.json` 與 `package-lock.json`。
 - 任何原始碼或設定改動都要 `bash scripts/bump-version.sh`；只改 `docs/`、`README.md`、`release-notes.pending.md` 不需要。
 
 ## 發佈（`.github/workflows/release.yml`）

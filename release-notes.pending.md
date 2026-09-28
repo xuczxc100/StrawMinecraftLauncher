@@ -14,6 +14,11 @@ SMCL 從零打造的第一個版本，核心功能使用 XMCL 的 `@xmcl/*` 函�
 - 任務抽屜顯示所有下載與安裝進度，可取消。
 - 深色／淺色主題、自訂強調色、繁體中文／English。
 
+## 開發工具（0.1.0.1）
+
+- GitHub Actions 升級到支援 Node 24 的版本（checkout／setup-node v7、upload-artifact v7、download-artifact v8、action-gh-release v3）。
+- `scripts/sync-version.mjs` 同步版本到 `package-lock.json`，避免 lockfile 根版本與 `package.json` 不一致。
+
 ## 平台
 
 Windows（NSIS）、Linux（AppImage、deb）、macOS（dmg，x64 與 arm64，未簽章）。
